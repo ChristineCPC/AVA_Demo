@@ -1,12 +1,17 @@
 import streamlit as st
 import requests
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+openai_api_key =  os.getenv("OPENAI_API_KEY")
 
 #enter symptoms to Deepseek to get a diagnosis
 def get_diagnosis(symptoms):
   #connects to deepseek and tells AI what to do
 
-    client = OpenAI(base_url = "https://openrouter.ai/api/v1", api_key = "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")
+    client = OpenAI(base_url = "https://openrouter.ai/api/v1", api_key = openai_api_key)
     try:
         completion = client.chat.completions.create(
             #extra_body={}
