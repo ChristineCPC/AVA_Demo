@@ -10,6 +10,47 @@ def switch_page(page_name):
     st.rerun()
 
 st.set_page_config(page_title = "AVA - AI Vetrainarian  Assistant for Livestock", layout = "wide")
+
+#Customization
+st.markdown(
+    
+    """
+        <style>
+            body
+            {
+                background-color: #f4f4f4; /* hex code for light gray*/
+            }
+
+            .main
+            {
+                background-color: white;
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
+            }
+
+            .stButton button
+            {
+                width: 100%;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 10px;
+                font-weight: bold;
+                background-color: #4CAF50; /*hex code for green*/
+                color: white;
+                border: none;
+            }
+
+            .stButton button: hover
+            {
+                background-color: #45a049;
+            }
+
+        </style>
+    """,
+    unsafe_allow_html = True
+)
+
 st.write(f"DEBUG: Current page - {st.session_state.page}") 
 
 #Home page/Main menu
@@ -65,4 +106,3 @@ elif st.session_state.page == "news":
 elif st.session_state.page == "settings":
     from pages.settings import show_settings
     show_settings()
-
