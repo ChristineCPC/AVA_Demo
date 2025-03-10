@@ -67,11 +67,11 @@ if st.session_state.page == "menu":
         switch_page("chat_history")
     if st.button("Animials"):
         switch_page("view_animals")
-    if st.button("Vets Near You"):
+    if st.button("Consult a Vet Near You"):
         switch_page("vet_finder")
     if st.button("Tasks"):
         switch_page("tasks")
-    if st.button("News"):
+    if st.button("News & Alerts"):
         switch_page("news")
     if st.button("Settings"):
         switch_page("settings")

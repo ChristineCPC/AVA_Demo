@@ -39,6 +39,14 @@ def show_diagnosis():
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
+    #Greet user when chat is first opened
+    if not st.session_state.messages:
+        st.session_state.messages.append({
+            "role": "ai",
+            "content": "Hello! My name is AVA, your AI Vetrainarian Assistant. How can I help?"
+        })
+
+
     st.markdown(
 
         """
@@ -51,7 +59,7 @@ def show_diagnosis():
                 .chat-container
                 {
                     background-color: white;
-                    padding: 20px;
+                    padding: 200px;
                     border-radius: 15px;
                     box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
                     max-width: 600px;
@@ -61,7 +69,7 @@ def show_diagnosis():
                 .chat-bubble
                 {
                     padding: 10px 15px;
-                    border-raduis: 15px;
+                    border-radius: 15px;
                     margin: 5px 0;
                     display: inline-block;
                     max-width: 80%;
@@ -72,7 +80,7 @@ def show_diagnosis():
                 {
                     background-color: #46B4E3; /*light blue*/
                     align-self: flex-end;
-                    text-aligh; right;
+                    text-align; right;
                 }
 
                 .ai-bubble
@@ -102,11 +110,11 @@ def show_diagnosis():
                     color: white;
                     padding: 15px;
                     text-align: center;
-                    font-size: 100px;
+                    font-size: 50px;
                     border-radius: 10px 10px 0 0;
                 }
 
-                .input-continer
+                .input-container
                 {
                     display: flex;
                     align-items: center;
@@ -148,7 +156,7 @@ def show_diagnosis():
     st.markdown('<div class ="header"> AVA </div>', unsafe_allow_html = True)
 
     #Chat Container
-    st.markdown('<div class = "chat-container>', unsafe_allow_html = True)
+    st.markdown('<div class = "chat-container">', unsafe_allow_html = True)
 
     #shows chat log
     for msg in st.session_state.messages:
