@@ -70,14 +70,14 @@ def show_diagnosis():
 
                 .user-bubble
                 {
-                    background-color: #46B4E3;
+                    background-color: #46B4E3; /*light blue*/
                     align-self: flex-end;
                     text-aligh; right;
                 }
 
                 .ai-bubble
                 {
-                    background-color: #696969;
+                    background-color: #696969; /*light grey*/
                     align-self: flex-start;
                 }
 
@@ -98,11 +98,11 @@ def show_diagnosis():
 
                 .header
                 {
-                    background: linear-gradient(to right, #FF5722, #FF9800);
+                    background: linear-gradient(to right, #2226ff, #81c6f7);
                     color: white;
                     padding: 15px;
                     text-align: center;
-                    font-size: 20px;
+                    font-size: 100px;
                     border-radius: 10px 10px 0 0;
                 }
 
@@ -145,7 +145,7 @@ def show_diagnosis():
     )
 
     #Header
-    st.markdown('<div class ="header">, AVA Chat</div>', unsafe_allow_html = True)
+    st.markdown('<div class ="header"> AVA </div>', unsafe_allow_html = True)
 
     #Chat Container
     st.markdown('<div class = "chat-container>', unsafe_allow_html = True)
@@ -179,11 +179,14 @@ def show_diagnosis():
         diagnosis = get_diagnosis(symptoms)
         st.session_state.messages.append({"role": "ai", "content": diagnosis})
         st.rerun()
+    elif send_button:
+        st.warning("Please enter symptoms before proceeding.")
 
-    st.title("Get a Diagnosis")
+    #st.title("Get a Diagnosis")
     
-    st.write("Enter symptoms below to get a preliminary diagnosis for your animal.")
+    #st.write("Enter symptoms below to get a preliminary diagnosis for your animal.")
     '''
+    get rid of this later
     #input field
     symptoms = st.text_area("Describe the symptoms:")
     if st.button("Submit"):
@@ -207,6 +210,6 @@ vet_list = ["Dr.Smith - Texas Livestock Care", "Dr.Burns - Farm Animal Hospital"
 for vet in vet_list:
     st.write(f"- {vet}")
 
-#Disclaimer
-st.write("\nNote: ADA's advice does not replace the advice of professonal veterinarians.")
 '''
+#Disclaimer
+st.write("\nNote: AVA's advice does not replace the advice of professonal veterinarians.")

@@ -13,7 +13,7 @@ st.set_page_config(page_title = "AVA - AI Vetrainarian  Assistant for Livestock"
 
 #Customization
 st.markdown(
-    
+
     """
         <style>
             body
@@ -34,7 +34,7 @@ st.markdown(
                 width: 100%;
                 border-radius: 10px;
                 padding: 10px;
-                font-size: 10px;
+                font-size: 60px;
                 font-weight: bold;
                 background-color: #4CAF50; /*hex code for green*/
                 color: white;
@@ -57,32 +57,25 @@ st.write(f"DEBUG: Current page - {st.session_state.page}")
 if st.session_state.page == "menu":
     #Greet user when app is opened
     st.title("Welcome to AVA")
-    st.write("Your AI-powered livestock health assistant")
-    st.subheader("Select an option below:")
+    st.subheader("Your AI-powered livestock health assistant")
+    st.write("Select an option below:")
 
     #Home page buttons
-    col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
-    with col1:
-        if st.button("Get a Diagnosis"):
-            switch_page("chatbot")
-    with col2:
-        if st.button("Chat History"):
-            switch_page("chat_history")
-    with col3:
-        if st.button("Animials"):
-            switch_page("view_animals")
-    with col4:
-        if st.button("Vets Near You"):
-            switch_page("vet_finder")
-    with col5:
-        if st.button("Tasks"):
-            switch_page("tasks")
-    with col6:
-        if st.button("News"):
-            switch_page("news")
-    with col7:
-        if st.button("Settings"):
-            switch_page("settings")
+    if st.button("Get a Diagnosis"):
+        switch_page("chatbot")
+    if st.button("Chat History"):
+        switch_page("chat_history")
+    if st.button("Animials"):
+        switch_page("view_animals")
+    if st.button("Vets Near You"):
+        switch_page("vet_finder")
+    if st.button("Tasks"):
+        switch_page("tasks")
+    if st.button("News"):
+        switch_page("news")
+    if st.button("Settings"):
+        switch_page("settings")
+
     
 #Other pages; these will display once the user selects a button
 elif st.session_state.page == "chatbot":
