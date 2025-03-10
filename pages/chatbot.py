@@ -43,7 +43,7 @@ def show_diagnosis():
     if not st.session_state.messages:
         st.session_state.messages.append({
             "role": "ai",
-            "content": "Hello! My name is AVA, your AI Vetrainarian Assistant. How can I help?"
+            "content": "Hello! My name is AVA, your AI Vetrainarian Assistant. Please describe the symptoms of your animal for a preliminary diagnosis."
         })
 
 
